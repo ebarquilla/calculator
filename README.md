@@ -78,9 +78,14 @@ curl -X POST "http://localhost:8080/api/v1/math/sum" \
      -d '{ "numberA": 10.5, "numberB": 5.5 }'
 ```
 
-**Example (Windows CMD/PowerShell):**
+**Example (Windows Command Prompt):**
 ```bash
 curl -X POST "http://localhost:8080/api/v1/math/sum" -H "Content-Type: application/json" -d "{\"numberA\": 10.5, \"numberB\": 5.5}"
+```
+
+**Example (PowerShell):**
+```powershell
+Invoke-RestMethod -Uri "http://localhost:8080/api/v1/math/sum" -Method POST -ContentType "application/json" -Body '{"numberA": 10.5, "numberB": 5.5}'
 ```
 
 **Response:**
@@ -110,9 +115,14 @@ curl -X POST "http://localhost:8080/api/v1/math/subtract" \
      -d '{ "numberA": 20, "numberB": 8 }'
 ```
 
-**Example (Windows CMD/PowerShell):**
+**Example (Windows Command Prompt):**
 ```bash
 curl -X POST "http://localhost:8080/api/v1/math/subtract" -H "Content-Type: application/json" -d "{\"numberA\": 20, \"numberB\": 8}"
+```
+
+**Example (PowerShell):**
+```powershell
+Invoke-RestMethod -Uri "http://localhost:8080/api/v1/math/subtract" -Method POST -ContentType "application/json" -Body '{"numberA": 20, "numberB": 8}'
 ```
 
 **Response:**
