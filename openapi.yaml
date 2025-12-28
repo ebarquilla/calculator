@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: Calculator Microservice API
+
+  description: Minimalist API for basic arithmetic operations.
+  version: 1.0.0
+servers:
+  - url: /api/v1
+    description: Main Server
+
+paths:
+  /math/sum:
+    post:
+      summary: Performs a sum
+      description: Takes two numbers and returns their sum.
+      operationId: calculateSum
+      tags:
+        - Arithmetic
+      requestBody:
+        description: Operands for the sum
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MathRequest'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MathResponse'
+        '400':
+          description: Invalid input (e.g. non-numeric data)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /math/subtract:
+    post:
+      summary: Performs a subtraction
+      description: Takes two numbers and returns the subtraction (a - b).
+      operationId: calculateSubtraction
+      tags:
+        - Arithmetic
+      requestBody:
+        description: Operands for the subtraction
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MathRequest'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MathResponse'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    MathRequest:
+      type: object
+      required:
+        - numberA
+        - numberB
+      properties:
+        numberA:
+          type: number
+          format: double
+          description: The first operand.
+          example: 10.5
+        numberB:
+          type: number
+          format: double
+          description: The second operand.
+          example: 5.2
+    
+    MathResponse:
+      type: object
+      properties:
+        result:
+          type: number
+          format: double
+          description: The result of the mathematical operation.
+          example: 15.7
+    
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: "Values must be numeric."
