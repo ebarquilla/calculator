@@ -92,8 +92,8 @@
                         <configuration>
                             <inputSpec>${project.basedir}/openapi.yaml</inputSpec>
                             <generatorName>spring</generatorName>
-                            <apiPackage>com.poc.calculadora.api</apiPackage>
-                            <modelPackage>com.poc.calculadora.dto</modelPackage>
+                            <apiPackage>com.poc.calculator.api</apiPackage>
+                            <modelPackage>com.poc.calculator.dto</modelPackage>
                             <configOptions>
                                 <interfaceOnly>true</interfaceOnly>
                                 <useSpringBoot3>true</useSpringBoot3>
