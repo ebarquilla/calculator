@@ -11,6 +11,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 
+/**
+ * Unit tests for CalculatorService.
+ * Verify the logic of arithmetic operations and tracer interaction.
+ */
 @ExtendWith(MockitoExtension.class)
 public class CalculatorServiceTest {
 
@@ -20,6 +24,10 @@ public class CalculatorServiceTest {
     @InjectMocks
     private CalculatorService calculatorService;
 
+    /**
+     * Verifies that the sum method correctly adds two numbers and traces the
+     * result.
+     */
     @Test
     void sumar_shouldReturnCorrectSum() {
         BigDecimal a = new BigDecimal("10");
@@ -29,6 +37,10 @@ public class CalculatorServiceTest {
         verify(tracer).trace(result);
     }
 
+    /**
+     * Verifies that the subtract method correctly subtracts two numbers and traces
+     * the result.
+     */
     @Test
     void restar_shouldReturnCorrectSubtraction() {
         BigDecimal a = new BigDecimal("20");
