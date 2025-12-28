@@ -51,6 +51,14 @@
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
         </dependency>
+        <!-- Library for tracing operations -->
+        <dependency>
+            <groupId>io.corp.calculator</groupId>
+            <artifactId>tracer</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/tracer-1.0.0.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>
